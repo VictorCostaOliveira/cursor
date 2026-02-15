@@ -7,14 +7,14 @@ Uma suite de agentes especializados para desenvolvimento Rails + Vue.js seguindo
 ### 1. rafael (Analista de Requisitos) ⭐
 **Analista de Requisitos Sênior**
 
-Conhece profundamente o projeto e levanta requisitos funcionais e não funcionais através de perguntas estratégicas.
+Analista de requisitos especializado em levantar requisitos funcionais e não funcionais através de perguntas estratégicas.
 
-- **Contexto do Projeto**: Analisa arquitetura, padrões, integrações e restrições existentes
-- **Levantamento de Requisitos**: Faz perguntas certas para mapear TODOS os cenários
-- **Requisitos Funcionais**: Fluxos principais, alternativos, erros, edge cases, validações
-- **Requisitos Não Funcionais**: Segurança, performance, escalabilidade, integrações, observabilidade
-- **Documentação Completa**: Critérios de aceite, casos de uso, dependências, riscos
-- **Uso**: SEMPRE use antes de implementar qualquer feature para garantir requisitos claros ⚠️
+- **Stack-Agnostic**: Funciona para qualquer projeto, não apenas Rails/Vue
+- **Perguntas Estratégicas**: Descobre requisitos através de questionamento estruturado
+- **Requisitos Completos**: Funcionais, não funcionais, edge cases, dependências
+- **Contexto de Negócio**: Entende usuários, processos, restrições, valor esperado
+- **Documentação**: Gera documento completo com critérios de aceite Given-When-Then
+- **Uso**: Use ANTES de planejar ou implementar features quando demanda estiver vaga ⚠️
 
 ### 2. rails-vue-feature-planner
 **Planejador de Features (TDD-First)**
@@ -60,14 +60,6 @@ Analisa código Rails em busca de problemas de segurança, SOLID, escalabilidade
 - **Foco**: Segurança, SOLID, performance, code smells, consistência
 - **Uso**: Proativo após modificações em código Rails
 - **Importante**: NÃO implementa mudanças sem confirmação explícita
-
-### 5. requirements-analyzer
-**Analisador de Requisitos**
-
-Transforma requisitos vagos em especificações técnicas claras e testáveis.
-
-- **Input**: User stories, cards Jira, requisitos de produto
-- **Output**: Critérios de aceite, casos de uso, edge cases
 
 ## 🚀 Como Usar
 
