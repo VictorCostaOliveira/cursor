@@ -4,62 +4,73 @@ Uma suite de agentes especializados para desenvolvimento Rails + Vue.js seguindo
 
 ## 🎯 Agentes Disponíveis
 
-### 1. rafael (Analista de Requisitos) ⭐
+### Fluxo principal (Rails + Vue.js)
+
+#### 1. requison (Analista de Requisitos) ⭐
 **Analista de Requisitos Sênior**
 
-Analista de requisitos especializado em levantar requisitos funcionais e não funcionais através de perguntas estratégicas.
+Levanta requisitos funcionais e não-funcionais através de perguntas estratégicas. Use ANTES de planejar ou implementar quando a demanda estiver vaga.
 
-- **Stack-Agnostic**: Funciona para qualquer projeto, não apenas Rails/Vue
 - **Perguntas Estratégicas**: Descobre requisitos através de questionamento estruturado
 - **Requisitos Completos**: Funcionais, não funcionais, edge cases, dependências
-- **Contexto de Negócio**: Entende usuários, processos, restrições, valor esperado
-- **Documentação**: Gera documento completo com critérios de aceite Given-When-Then
-- **Uso**: Use ANTES de planejar ou implementar features quando demanda estiver vaga ⚠️
+- **Documentação**: Critérios de aceite Given-When-Then
+- **Uso**: Use proativamente ANTES de planejar ou implementar features ⚠️
 
-### 2. rails-vue-feature-planner
-**Planejador de Features (TDD-First)**
+#### 2. ana (Planejadora TDD)
+**Arquiteta Rails + Vue.js (TDD-First)**
 
-Transforma user stories e cards Jira em planos de implementação executáveis, **sempre começando pelos testes**.
+Transforma requisitos em planos executáveis com **testes primeiro** (Better Specs).
 
-- **Ruby on Rails**: REST APIs, Active Record, RSpec, Service Objects
-- **Vue.js 3**: Composition API, Pinia, componentização, reatividade
-- **TDD**: Red-Green-Refactor, Better Specs para backend e frontend
-- **Arquitetura**: SOLID, Design Patterns, Clean Architecture
-- **Qualidade**: Testes primeiro, segurança, performance, escalabilidade
+- **Rails**: REST APIs, Active Record, RSpec, Service Objects
+- **Vue.js 3**: Composition API, Pinia, Vitest
+- **TDD**: Red-Green-Refactor, specs RSpec/Vitest antes da implementação
+- **Uso**: Após requison levantar requisitos
 
-### 3. junior (Desenvolvedor Júnior)
-**Desenvolvedor de Implementação**
+#### 3. devoso (Desenvolvedor Sênior)
+**Implementação Vue + Rails**
 
-Pega o plano e testes definidos e implementa o código até todos os testes passarem.
+Implementa código seguindo plano e testes; respeita testes existentes e roda testes a cada alteração.
 
-- **Análise de Padrões**: Em projetos existentes, replica EXATAMENTE os padrões do código existente ⚠️
-- **Foco**: Implementação pura, não planejamento
-- **Regra Crítica**: NUNCA altera testes, apenas implementa código que os satisfaz
-- **Workflow**: RED (testes falham) → GREEN (implementa) → REFACTOR
-- **Boas Práticas**: Segue todos os conhecimentos da base (SOLID, DRY, segurança)
-- **Consistência**: Código novo deve parecer escrito pela mesma pessoa do código antigo
+- **Apenas código**: Não altera specs/requisitos a menos que pedido
+- **Nunca altera testes**: Código obedece ao contrato dos testes
+- **Testes a cada mudança**: Roda testes do contexto afetado antes de seguir
+- **Knowledge**: Consulta `knowledge/` para boas práticas
+- **Uso**: Implementações em Vue (Composition API, Pinia) e Rails (models, controllers, services)
 
-### 4. verifier (Validador Independente) ⭐
+#### 4. verifier (Validador Independente) ⭐
 **Validador Cético**
 
-Confirma se trabalho declarado como completo realmente funciona através de validação independente.
+Confirma se o trabalho declarado como completo realmente funciona.
 
-- **Foco**: Validação independente de implementações
-- **Processo**: Executa testes, verifica edge cases, valida fluxos de ponta a ponta
-- **Uso**: Proativo APÓS Junior marcar implementação concluída
-- **Importante**: Cético, não aceita declarações pelo valor aparente
+- **Processo**: Executa testes, edge cases, fluxo de ponta a ponta
+- **Uso**: Proativo APÓS devoso marcar implementação concluída
 - **Benefício**: Identifica implementações incompletas antes de considerar feature pronta
 
-### 5. astolfo (Revisor Sênior)
-**Revisor de Código Rails**
+#### 5. avaliason (Revisor de Código)
+**Code Review Expert**
 
-Analisa código Rails em busca de problemas de segurança, SOLID, escalabilidade e qualidade.
+Revisão estruturada das mudanças atuais (git) com foco em SOLID, segurança, performance e tratamento de erros.
 
-- **Verificação de Padrões**: Valida se código novo segue padrões existentes do projeto ⚠️
-- **Expertise**: Ruby on Rails de larga escala
-- **Foco**: Segurança, SOLID, performance, code smells, consistência
-- **Uso**: Proativo após modificações em código Rails
-- **Importante**: NÃO implementa mudanças sem confirmação explícita
+- **Severidade**: P0 (crítico) a P3 (baixo); review-only por padrão
+- **Foco**: SOLID, segurança, race conditions, performance, boundary conditions
+- **Uso**: Proativo após modificações; NÃO implementa sem confirmação explícita
+
+### Especialistas
+
+#### testivos (Testes)
+Expert em testes: frontend (Vue 3 + Vitest/Jest) e backend (RSpec em Rails). Use para escrever, revisar ou corrigir testes e para melhorar cobertura.
+
+#### infrason (Infraestrutura e DevOps)
+Especialista em Docker, Kubernetes, CI/CD, monitoramento e deploy. Use para criar, configurar ou otimizar infraestrutura e pipelines.
+
+#### cobrinha (Python)
+Especialista em projetos Python: arquiteturas, estruturação, ambientes, dependências, Dockerfiles e boas práticas.
+
+#### robs (Padrões Frontend)
+Mapeia e documenta padrões, convenções e decisões de arquitetura no frontend. Ideal para onboarding e documentação viva.
+
+#### wiki (Pesquisa Técnica)
+Pesquisa e explica conceitos técnicos, tecnologias e ferramentas; analisa tradeoffs e apresenta visões completas.
 
 ## 🚀 Como Usar
 
@@ -67,28 +78,28 @@ Analisa código Rails em busca de problemas de segurança, SOLID, escalabilidade
 
 #### Workflow Recomendado ⭐
 
-1. **Análise de Requisitos** → Use `rafael` para levantar requisitos completos
+1. **Análise de Requisitos** → Use `requison` para levantar requisitos completos
 2. **Planejamento TDD** → Use `ana` para criar plano e testes
-3. **Implementação** → Use `junior` para desenvolver código
-4. **Validação** → Use `verifier` para confirmar que realmente funciona ⭐ NOVO!
-5. **Revisão** → Use `astolfo` para revisar qualidade
+3. **Implementação** → Use `devoso` para desenvolver código
+4. **Validação** → Use `verifier` para confirmar que realmente funciona
+5. **Revisão** → Use `avaliason` para revisar qualidade (SOLID, segurança, performance)
 
-#### Por que começar com Rafael?
+#### Por que começar com Requison?
 
 Começar com análise de requisitos garante:
 - ✅ Nenhuma ambiguidade ou gap nos requisitos
 - ✅ Todos os edge cases identificados
 - ✅ Requisitos não funcionais mapeados (segurança, performance)
-- ✅ Ana (planejadora) tem especificação completa para trabalhar
+- ✅ Ana tem especificação completa para trabalhar
 - ✅ Menos retrabalho e surpresas durante implementação
 
 ### Exemplos de Uso por Agente
 
-#### rafael: Análise de Requisitos ⭐
+#### requison: Análise de Requisitos ⭐
 
 ```
 Preciso implementar um sistema de comentários nos posts.
-Use o rafael para levantar todos os requisitos funcionais e não funcionais.
+Use o requison para levantar todos os requisitos funcionais e não funcionais.
 ```
 
 **Output**: Documentação completa com requisitos funcionais, não funcionais, casos de uso, edge cases, critérios de aceite e dependências.
@@ -96,17 +107,17 @@ Use o rafael para levantar todos os requisitos funcionais e não funcionais.
 #### ana: Criar Plano TDD
 
 ```
-Já tenho os requisitos completos do sistema de comentários levantados pelo rafael.
+Já tenho os requisitos completos do sistema de comentários levantados pelo requison.
 Use a ana para criar um plano TDD completo com testes.
 ```
 
 **Output**: Plano com testes RSpec + Vitest especificados primeiro, depois design de implementação.
 
-#### junior: Implementar Feature
+#### devoso: Implementar Feature
 
 ```
 Tenho o plano de comentários pronto e os testes escritos pela ana.
-Use o junior para implementar o código até todos os testes passarem.
+Use o devoso para implementar o código até todos os testes passarem.
 ```
 
 **Output**: Implementação completa (backend + frontend) com todos os testes passando.
@@ -119,13 +130,13 @@ Use o verifier para confirmar que o sistema de comentários realmente funciona.
 
 **Output**: Validação independente confirmando o que funciona vs o que está incompleto.
 
-#### astolfo: Revisar Código
+#### avaliason: Revisar Código
 
 ```
-Use o astolfo para analisar o código de comentários implementado e validado.
+Use o avaliason para analisar o código de comentários implementado e validado.
 ```
 
-**Output**: Análise de segurança, SOLID, performance, consistência e sugestões de melhoria.
+**Output**: Revisão estruturada (severidade P0–P3) em SOLID, segurança, performance e sugestões de melhoria.
 
 ### Exemplos Combinados
 
@@ -133,27 +144,27 @@ Use o astolfo para analisar o código de comentários implementado e validado.
 ```
 User Story: Sistema de likes nos posts
 
-1. rafael: Levanta requisitos funcionais e não funcionais
+1. requison: Levanta requisitos funcionais e não funcionais
 2. ana: Cria plano TDD com testes especificados
-3. junior: Implementa código até todos os testes passarem
-4. verifier: Valida que realmente funciona de ponta a ponta ⭐ NOVO!
-5. astolfo: Revisa código para garantir qualidade
+3. devoso: Implementa código até todos os testes passarem
+4. verifier: Valida que realmente funciona de ponta a ponta
+5. avaliason: Revisa código para garantir qualidade
 ```
 
 #### API + Frontend do Zero
 ```
 Preciso criar endpoints REST para gerenciar produtos e a interface Vue.
 
-rafael: Levanta todos os requisitos (auth, validações, edge cases, performance)
+requison: Levanta todos os requisitos (auth, validações, edge cases, performance)
 ana: Desenha a solução completa com testes primeiro
-junior: Implementa backend Rails + frontend Vue seguindo padrões do projeto
-verifier: Confirma que tudo funciona de ponta a ponta (testes + fluxo real) ⭐
-astolfo: Valida segurança, SOLID, performance e consistência
+devoso: Implementa backend Rails + frontend Vue seguindo padrões do projeto
+verifier: Confirma que tudo funciona de ponta a ponta (testes + fluxo real)
+avaliason: Valida segurança, SOLID, performance e consistência
 ```
 
 ## 🤔 Quando Usar Cada Agente
 
-### Use o Rafael (Analista de Requisitos) quando:
+### Use o Requison (Analista de Requisitos) quando:
 
 ✅ Você recebe uma **demanda nova** de feature
 ✅ Requisitos estão **vagos ou incompletos**
@@ -172,7 +183,7 @@ astolfo: Valida segurança, SOLID, performance e consistência
 
 **Exemplo**: "Já tenho requisitos completos, preciso do plano técnico"
 
-### Use o Junior (Desenvolvedor) quando:
+### Use o Devoso (Desenvolvedor) quando:
 
 ✅ Já tem **plano e testes prontos**
 ✅ Só precisa de **implementação pura**
@@ -183,25 +194,25 @@ astolfo: Valida segurança, SOLID, performance e consistência
 
 ### Use o Verifier (Validador) quando:
 
-✅ Junior **marcou tasks como concluídas**
+✅ Devoso **marcou tasks como concluídas**
 ✅ Quer **confirmar que realmente funciona**
 ✅ Precisa **validar de ponta a ponta**
 ✅ Quer **identificar implementações incompletas**
 
 **Exemplo**: "Verificar se sistema de comentários está realmente completo"
 
-### Use o Astolfo (Revisor) quando:
+### Use o Avaliason (Revisor) quando:
 
 ✅ Código já foi **implementado e validado**
 ✅ Precisa validar **segurança, SOLID, performance**
-✅ Quer verificar **consistência com padrões do projeto**
-✅ Precisa de **sugestões de melhoria**
+✅ Quer **revisão estruturada** das mudanças (git) com níveis de severidade
+✅ Precisa de **sugestões de melhoria** (review-only por padrão)
 
 **Exemplo**: "Revisar PR de comentários"
 
 ## 📋 O Que Cada Agente Entrega
 
-### rafael (Analista de Requisitos) ⭐
+### requison (Analista de Requisitos) ⭐
 
 **Output**: Documentação completa de requisitos incluindo:
 
@@ -213,7 +224,7 @@ astolfo: Valida segurança, SOLID, performance e consistência
 6. **Dependências e Riscos** - Impactos, integrações, pontos de atenção
 7. **Estimativa de Complexidade** - Tamanho da feature e justificativa
 
-### rails-vue-feature-planner (Planejador)
+### ana (Planejadora)
 
 **Output**: Plano TDD completo incluindo:
 
@@ -223,7 +234,7 @@ astolfo: Valida segurança, SOLID, performance e consistência
 4. **Plano de Execução** - Fases TDD com ordem de implementação
 5. **Considerações Técnicas** - Segurança, performance, rollback
 
-### rails-vue-developer (Desenvolvedor)
+### devoso (Desenvolvedor)
 
 **Output**: Código implementado incluindo:
 
@@ -234,7 +245,7 @@ astolfo: Valida segurança, SOLID, performance e consistência
 5. **Sem Alterações nos Testes** - Testes originais intactos
 
 
-### verifier (Validador) ⭐ NOVO!
+### verifier (Validador) ⭐
 
 **Output**: Validação independente incluindo:
 
@@ -244,9 +255,9 @@ astolfo: Valida segurança, SOLID, performance e consistência
 4. **Edge Cases Não Tratados** - Cenários que precisam atenção
 5. **Resumo de Completude** - Taxa real de conclusão e próximas ações
 
-### astolfo (Revisor)
+### avaliason (Revisor)
 
-**Output**: Análise detalhada incluindo:
+**Output**: Revisão estruturada incluindo:
 
 1. **Problemas de Segurança** - Auth, validations, SQL injection, XSS
 2. **Violações SOLID** - SRP, OCP, LSP, ISP, DIP
@@ -258,11 +269,16 @@ astolfo: Valida segurança, SOLID, performance e consistência
 
 ```
 .cursor/agents/
-├── rafael.md                       # 🎯 Analista de requisitos (levanta RF e RNF) ⭐
+├── requison.md                     # 🎯 Analista de requisitos (levanta RF e RNF) ⭐
 ├── ana.md                          # 📐 Arquiteta & Planejadora TDD (testes primeiro)
-├── junior.md                       # 🛠️  Desenvolvedor júnior (implementação rápida)
-├── verifier.md                     # ✅ Validador cético (confirma que funciona) ⭐ NOVO!
-├── astolfo.md                      # 🔍 Revisor sênior (segurança, SOLID, performance)
+├── devoso.md                       # 🛠️ Desenvolvedor sênior Vue + Rails (implementação)
+├── verifier.md                     # ✅ Validador cético (confirma que funciona) ⭐
+├── avaliason.md                    # 🔍 Revisor de código (SOLID, segurança, performance)
+├── testivos.md                     # 🧪 Especialista em testes (Vitest, RSpec)
+├── infrason.md                     # 🐳 Infraestrutura e DevOps (Docker, K8s, CI/CD)
+├── cobrinha.md                     # 🐍 Especialista Python
+├── robs.md                         # 📐 Padrões e documentação frontend
+├── wiki.md                         # 📚 Pesquisa e conceitos técnicos
 ├── knowledge/                      # 📚 Base de conhecimento compartilhada
 │   ├── architecture.md             # SOLID e design patterns
 │   ├── backend.md                  # Padrões de arquitetura backend
@@ -308,21 +324,21 @@ O agente consulta automaticamente a base de conhecimento durante o planejamento:
 
 Todos os agentes seguem:
 
-1. **Requisitos Primeiro** ⭐: Rafael levanta requisitos completos ANTES de qualquer planejamento ou código
+1. **Requisitos Primeiro** ⭐: Requison levanta requisitos completos ANTES de qualquer planejamento ou código
 2. **Padrões Existentes Primeiro** ⚠️: Em projetos existentes, SEMPRE analisar e seguir os padrões já implementados
 3. **Test-First**: Ana define testes ANTES da implementação (TDD)
 4. **Red-Green-Refactor**: RED (testes falham) → GREEN (implementa) → REFACTOR (limpa)
-5. **Validação Independente** ⭐ NOVO!: Verifier confirma que "completo" realmente funciona
+5. **Validação Independente** ⭐: Verifier confirma que "completo" realmente funciona
 6. **Better Specs**: https://www.betterspecs.org/ em RSpec E Vitest
 7. **SOLID Principles**: Código limpo, coeso, manutenível
 8. **Security by Default**: Auth, validations, proteções desde o início
 9. **Performance Optimization**: N+1 prevention, eager loading, indexação
-10. **Never Touch Tests**: Junior NUNCA altera testes, apenas implementa código
+10. **Never Touch Tests**: Devoso NUNCA altera testes, apenas implementa código
 11. **Consistency > Perfection**: Manter consistência com código existente é mais importante que "fazer do jeito perfeito"
 
 ## ⚙️ Workflow TDD Completo
 
-### Fase 1: Planejamento (rails-vue-feature-planner)
+### Fase 1: Planejamento (ana)
 
 ```
 INPUT: User story / Card Jira
@@ -338,7 +354,7 @@ INPUT: User story / Card Jira
 OUTPUT: Plano TDD completo + Testes escritos
 ```
 
-### Fase 2: Implementação (rails-vue-developer)
+### Fase 2: Implementação (devoso)
 
 ```
 INPUT: Plano + Testes escritos
@@ -356,7 +372,7 @@ INPUT: Plano + Testes escritos
 OUTPUT: Feature completa funcionando
 ```
 
-### Fase 3: Validação (verifier) ⭐ NOVO!
+### Fase 3: Validação (verifier) ⭐
 
 ```
 INPUT: Código implementado
@@ -370,7 +386,7 @@ INPUT: Código implementado
 OUTPUT: Relatório de validação (o que funciona vs incompleto)
 ```
 
-### Fase 4: Revisão (astolfo)
+### Fase 4: Revisão (avaliason)
 
 ```
 INPUT: Código implementado
@@ -390,11 +406,11 @@ OUTPUT: Relatório de qualidade + Refactorings
 
 **Workflow Completo** (5 fases) ⭐
 
-**1. ANÁLISE DE REQUISITOS** → `rafael`
+**1. ANÁLISE DE REQUISITOS** → `requison`
 ```
 Input: "Preciso implementar sistema de comentários nos posts"
 
-Rafael faz perguntas:
+Requison faz perguntas:
   - Quem pode comentar? Apenas logados?
   - Pode editar/deletar comentários?
   - Há limite de caracteres?
@@ -415,7 +431,7 @@ Output:
 
 **2. PLANEJAMENTO TDD** → `ana`
 ```
-Input: Requisitos completos do rafael
+Input: Requisitos completos do requison
 
 Output:
   ✓ Testes RSpec escritos (Comment model + API)
@@ -424,7 +440,7 @@ Output:
   ✓ Plano de execução em fases
 ```
 
-**3. IMPLEMENTAR** → `junior`
+**3. IMPLEMENTAR** → `devoso`
 ```
 Input: Plano da ana + Testes escritos
 
@@ -445,9 +461,9 @@ Workflow:
 Output: Feature implementada com testes passando
 ```
 
-**4. VALIDAR** → `verifier` ⭐ NOVO!
+**4. VALIDAR** → `verifier` ⭐
 ```
-Input: Código implementado pelo junior
+Input: Código implementado pelo devoso
 
 Workflow:
   1. Executa todos os testes (rspec + npm test)
@@ -463,9 +479,9 @@ Output:
   ✓ Taxa real de completude
 ```
 
-**5. REVISAR** → `astolfo`
+**5. REVISAR** → `avaliason`
 ```
-Input: Código implementado pelo junior
+Input: Código implementado pelo devoso
 
 Output:
   ✓ Segurança OK (auth, validations)
@@ -479,7 +495,7 @@ Output:
 
 ## 📖 Exemplo de Saída por Agente
 
-### 📐 rails-vue-feature-planner Output
+### 📐 ana (Planejadora) Output
 
 **🧪 Testes Backend (escritos pelo planner)**
 ```ruby
@@ -539,7 +555,7 @@ Frontend:
   3. Components: CommentForm.vue, CommentList.vue, CommentItem.vue
 ```
 
-### 🛠️ rails-vue-developer Output
+### 🛠️ devoso (Desenvolvedor) Output
 
 **Implementação Real (código que faz testes passarem)**
 
@@ -604,7 +620,7 @@ $ npm run test
 # Tests: 24 passed ✅
 ```
 
-### 🔍 rails-senior-reviewer Output
+### 🔍 avaliason (Revisor) Output
 
 **Análise de Qualidade**
 ```
@@ -636,17 +652,17 @@ Você pode personalizar os agentes editando:
 
 ## 💡 Dicas de Uso
 
-1. **SEMPRE comece com Rafael**: Ele vai levantar requisitos completos e fazer as perguntas certas ⭐
-2. **SEMPRE mencione se é projeto existente**: Os agentes vão analisar e seguir os padrões estabelecidos ⚠️
+1. **SEMPRE comece com Requison**: Levanta requisitos completos e faz as perguntas certas ⭐
+2. **SEMPRE mencione se é projeto existente**: Os agentes analisam e seguem os padrões estabelecidos ⚠️
 3. **Não pule a análise de requisitos**: Requisitos mal levantados = retrabalho garantido
-4. **Valide os requisitos com Rafael**: Confirme que ele cobriu tudo antes de passar para Ana
-5. **Siga a ordem completa**: Rafael → Ana → Junior → **Verifier** → Astolfo ⭐
-6. **Use Verifier após implementação**: Confirme que funciona antes de considerar completo ⭐ NOVO!
+4. **Valide os requisitos com Requison**: Confirme que cobriu tudo antes de passar para Ana
+5. **Siga a ordem completa**: Requison → Ana → Devoso → Verifier → Avaliason ⭐
+6. **Use Verifier após implementação**: Confirme que funciona antes de considerar completo ⭐
 7. **Use Better Specs**: Sempre siga os padrões do https://www.betterspecs.org/
-8. **Itere quando necessário**: Se requisitos mudarem, volte ao Rafael
-9. **Confie na equipe**: Rafael analisa, Ana planeja, Junior implementa, Verifier valida, Astolfo revisa
+8. **Itere quando necessário**: Se requisitos mudarem, volte ao Requison
+9. **Confie na equipe**: Requison analisa, Ana planeja, Devoso implementa, Verifier valida, Avaliason revisa
 10. **Consistência é chave**: Em projetos existentes, seguir padrões > inventar novos padrões
-11. **Documente decisões**: Rafael vai documentar tudo, use isso como referência
+11. **Documente decisões**: Requison documenta tudo; use isso como referência
 
 ## 🤝 Contribuindo
 
@@ -660,11 +676,6 @@ Para melhorar este agente:
 ## 📝 Licença
 
 Este agente é específico do projeto e pode ser customizado conforme necessário.
-
----
-
-**Rails + Vue.js + TDD + IA = Feature Planning de Qualidade** 🚀
-onforme necessário.
 
 ---
 

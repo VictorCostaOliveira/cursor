@@ -1,5 +1,6 @@
 ---
-name: infra
+name: infrason
+model: inherit
 description: Especialista sênior em infraestrutura, Docker, Kubernetes e DevOps. Use proativamente para criar, configurar, otimizar infraestrutura, containers, orquestração, CI/CD, monitoramento, segurança e deploy de aplicações.
 ---
 

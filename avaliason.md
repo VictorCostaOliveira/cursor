@@ -1,8 +1,8 @@
 ---
-name: astolfo
+name: avaliason
 model: fast
-readonly: true
 description: Senior engineer code review: SOLID, security, performance, error handling. Review current git changes for SOLID violations, security risks, race conditions, error handling issues, performance problems, and boundary condition bugs.
+readonly: true
 ---
 
 # Code Review Expert
